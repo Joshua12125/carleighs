@@ -228,20 +228,21 @@ section{padding:clamp(3rem, 6vw, 5rem) 0;}
 /* ============ HERO (home) ============ */
 .hero{
   position:relative; overflow:hidden;
-  background:radial-gradient(ellipse 120% 90% at 70% 10%, #2a0f1f 0%, var(--ink) 55%, #0e0509 100%);
+  background-image:
+    linear-gradient(rgba(20,8,15,0.8), rgba(20,8,15,0.7)),
+    url('images/hero-team.jpg');
+  background-size:cover; background-position:center 30%; background-repeat:no-repeat;
   color:var(--cream); padding:clamp(3.5rem,8vw,6rem) 0 clamp(3rem,6vw,4.5rem);
 }
-.hero .wrap{position:relative; z-index:2; display:grid; grid-template-columns:1.05fr 0.95fr; gap:3rem; align-items:center;}
+.hero .wrap{position:relative; z-index:2;}
+.hero-content{max-width:44rem; margin:0 auto; text-align:center;}
 .hero-eyebrow{color:var(--lilac); font-size:0.95rem; font-weight:500; margin-bottom:1rem;}
-.hero h1{font-size:clamp(2.3rem, 1.7rem + 3vw, 3.9rem); color:var(--cream); line-height:1.06; max-width:15ch;}
+.hero h1{font-size:clamp(2.3rem, 1.7rem + 3vw, 3.9rem); color:var(--cream); line-height:1.06; max-width:none;}
 .hero h1 em{color:var(--pink); font-style:normal;}
-.hero .lede{margin-top:1.3rem; max-width:42ch; font-size:1.08rem; color:#e9d9e2;}
-.hero-actions{margin-top:2rem; display:flex; gap:1rem; flex-wrap:wrap;}
-.hero-image-wrap{aspect-ratio:4/3; border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-md);}
-.hero-image-wrap img{width:100%; height:100%; object-fit:cover; transition:transform 0.6s var(--ease);}
-.hero-image-wrap:hover img{transform:scale(1.03);}
+.hero .lede{margin:1.3rem auto 0; max-width:42ch; font-size:1.08rem; color:#e9d9e2;}
+.hero-actions{margin-top:2rem; display:flex; gap:1rem; flex-wrap:wrap; justify-content:center;}
 
-.trust-strip{margin-top:2.5rem; display:flex; flex-wrap:wrap; gap:0.75rem;}
+.trust-strip{margin-top:2.5rem; display:flex; flex-wrap:wrap; gap:0.75rem; justify-content:center;}
 .trust-chip{
   display:inline-flex; align-items:center; gap:0.5rem;
   padding:0.55rem 1rem; border-radius:var(--radius-pill); font-size:0.86rem; font-weight:500;
@@ -295,14 +296,14 @@ section{padding:clamp(3rem, 6vw, 5rem) 0;}
 .cta-band .actions{display:flex; gap:1rem; flex-wrap:wrap;}
 
 /* ============ SERVICES PAGE ============ */
-.services-hero{padding:clamp(3rem,6vw,4.5rem) 0 clamp(2rem,4vw,2.5rem); background:var(--cream-dim);}
+.services-hero{padding:clamp(3rem,6vw,4.5rem) 0 clamp(1.5rem,3vw,2rem);}
 .service-block{
-  display:grid; grid-template-columns:11fr 9fr; gap:9.5rem; align-items:center;
+  display:grid; grid-template-columns:11fr 9fr; gap:4rem; align-items:center;
   padding:4rem 0; border-top:1px solid var(--line-soft);
 }
 .service-block:first-of-type{border-top:none; padding-top:0.5rem;}
 .service-block--reverse{grid-template-columns:9fr 11fr;}
-.service-block--reverse .service-copy{order:2; padding-left:4.5rem;}
+.service-block--reverse .service-copy{order:2; padding-left:1.5rem;}
 .service-num{font-family:'Fraunces',serif; font-size:0.95rem; color:var(--pink-deep); letter-spacing:0.03em; display:block; margin-bottom:0.9rem;}
 .service-name{font-size:clamp(1.8rem,2.6vw,2.35rem); margin-bottom:0.5rem; line-height:1.08;}
 .service-tag{color:var(--pink-deep); font-weight:500; font-size:0.9rem; margin:0 0 1.1rem;}
@@ -310,7 +311,7 @@ section{padding:clamp(3rem, 6vw, 5rem) 0;}
 .service-list{margin:0 0 1.4rem; padding:0; max-width:36ch;}
 .service-list li{margin-bottom:0.6rem; padding-left:1.15rem; position:relative; color:var(--ink-soft); font-size:0.97rem; line-height:1.5;}
 .service-list li::before{content:""; position:absolute; left:0; top:0.55em; width:6px; height:6px; border-radius:50%; background:var(--pink);}
-.service-image-wrap{aspect-ratio:4/3; width:100%; border-radius:var(--radius-lg); overflow:hidden;}
+.service-image-wrap{aspect-ratio:4/3; width:100%; border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-md);}
 .service-image-wrap img{width:100%; height:100%; object-fit:cover;}
 
 /* ============ CONTACT PAGE ============ */
@@ -368,15 +369,14 @@ footer{background:var(--ink); color:#cbb9c4; padding:3.5rem 0 2rem;}
 
 /* ============ RESPONSIVE ============ */
 @media (max-width:1024px){
-  .hero .wrap{grid-template-columns:1fr; gap:2.5rem;}
-  .hero h1{max-width:none;}
+  .hero{background-position:center 20%;}
   .why-top{grid-template-columns:1fr 0.85fr; gap:2rem;}
   .why-lede{max-width:32ch;}
   .benefit{padding-left:1.5rem; padding-right:1.5rem;}
   .benefit:first-child{padding-left:0;}
   .benefit:last-child{padding-right:0;}
-  .service-block{gap:7rem;}
-  .service-block--reverse .service-copy{padding-left:3rem;}
+  .service-block{gap:2.75rem;}
+  .service-block--reverse .service-copy{padding-left:1rem;}
   .footer-grid{grid-template-columns:1fr 1fr; gap:2.25rem;}
   .contact-grid{grid-template-columns:1fr; gap:2.25rem;}
 }
@@ -556,12 +556,13 @@ footer{background:var(--ink); color:#cbb9c4; padding:3.5rem 0 2rem;}
     </div>
   </section>
 
-  <section>
-    <div class="wrap">
-      <div class="contact-info-card glass reveal" style="max-width:34rem; margin:0 auto; text-align:center;">
-        <h2 style="font-size:1.5rem;">Not sure which clean you need?</h2>
-        <p style="margin-top:0.6rem; color:var(--ink-soft);">Tell us about your home and we'll help you choose.</p>
-        <a class="btn btn-primary" href="contact.html" style="margin-top:1.5rem;">Get a Free Quote</a>
+  <section class="cta-band">
+    <div class="wrap reveal" style="text-align:center; flex-direction:column; justify-content:center; align-items:center;">
+      <h2 style="max-width:none;">Not sure which clean you need?</h2>
+      <p style="margin-top:0.6rem; color:#e9d9e2;">Tell us about your home and we'll help you choose.</p>
+      <div class="actions" style="margin-top:1.5rem;">
+        <a class="btn btn-primary" href="contact.html">Get a Free Quote</a>
+        <a class="btn btn-ghost-dark" href="tel:+15709510272">Call (570) 951-0272</a>
       </div>
     </div>
   </section>
